@@ -12,7 +12,7 @@
 		67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */; };
 		FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC22C884F27007EB69A /* AppDelegate.swift */; };
 		FEDCBDC52C884F27007EB69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC42C884F27007EB69A /* SceneDelegate.swift */; };
-		FEDCBDC72C884F27007EB69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC62C884F27007EB69A /* ViewController.swift */; };
+		FEDCBDC72C884F27007EB69A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC62C884F27007EB69A /* ProfileViewController.swift */; };
 		FEDCBDCC2C884F28007EB69A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDCBDCB2C884F28007EB69A /* Assets.xcassets */; };
 		FEDCBDDA2C884F28007EB69A /* SNS_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDD92C884F28007EB69A /* SNS_PracticeTests.swift */; };
 		FEDCBDE42C884F28007EB69A /* SNS_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDE32C884F28007EB69A /* SNS_PracticeUITests.swift */; };
@@ -21,6 +21,8 @@
 		FEDCBDFC2C88516D007EB69A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDFB2C88516D007EB69A /* BaseView.swift */; };
 		FEDCBDFE2C8852A5007EB69A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDFD2C8852A5007EB69A /* BaseViewController.swift */; };
 		FEDCBE022C885339007EB69A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBE012C885339007EB69A /* UIView+.swift */; };
+		FEDCBE042C885DA4007EB69A /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBE032C885DA4007EB69A /* UIStackView+.swift */; };
+		FEDCBE072C88610E007EB69A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBE062C88610E007EB69A /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,7 @@
 		FEDCBDBF2C884F27007EB69A /* SNS_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNS_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEDCBDC22C884F27007EB69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEDCBDC42C884F27007EB69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FEDCBDC62C884F27007EB69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEDCBDC62C884F27007EB69A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FEDCBDCB2C884F28007EB69A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEDCBDD02C884F28007EB69A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEDCBDD52C884F28007EB69A /* SNS_PracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNS_PracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,8 @@
 		FEDCBDFB2C88516D007EB69A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FEDCBDFD2C8852A5007EB69A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FEDCBE012C885339007EB69A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		FEDCBE032C885DA4007EB69A /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		FEDCBE062C88610E007EB69A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +186,7 @@
 		FEDCBDF72C8850F2007EB69A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FEDCBDC62C884F27007EB69A /* ViewController.swift */,
+				FEDCBDC62C884F27007EB69A /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -199,7 +203,7 @@
 		FEDCBDF92C88512B007EB69A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FEDCBDF72C8850F2007EB69A /* ViewController */,
+				FEDCBE052C8860F4007EB69A /* Profile */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -225,8 +229,26 @@
 			isa = PBXGroup;
 			children = (
 				FEDCBE012C885339007EB69A /* UIView+.swift */,
+				FEDCBE032C885DA4007EB69A /* UIStackView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FEDCBE052C8860F4007EB69A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FEDCBE082C886111007EB69A /* Cell */,
+				FEDCBDF72C8850F2007EB69A /* ViewController */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FEDCBE082C886111007EB69A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEDCBE062C88610E007EB69A /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,9 +489,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDCBE042C885DA4007EB69A /* UIStackView+.swift in Sources */,
+				FEDCBE072C88610E007EB69A /* PhotoCollectionViewCell.swift in Sources */,
 				FEDCBE022C885339007EB69A /* UIView+.swift in Sources */,
 				FEDCBDFE2C8852A5007EB69A /* BaseViewController.swift in Sources */,
-				FEDCBDC72C884F27007EB69A /* ViewController.swift in Sources */,
+				FEDCBDC72C884F27007EB69A /* ProfileViewController.swift in Sources */,
 				FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */,
 				FEDCBDC52C884F27007EB69A /* SceneDelegate.swift in Sources */,
 				FEDCBDFC2C88516D007EB69A /* BaseView.swift in Sources */,

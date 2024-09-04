@@ -20,4 +20,9 @@ extension UIView {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
+    
+    func makeRoundedCorner(radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+    }
 }

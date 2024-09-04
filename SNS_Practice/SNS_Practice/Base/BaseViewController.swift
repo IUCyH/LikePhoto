@@ -14,7 +14,6 @@ class BaseViewController: UIViewController {
         
         setStyle()
         setLayout()
-        setDelegate()
     }
     
     /// Set properties of all sub views in this view
@@ -24,11 +23,6 @@ class BaseViewController: UIViewController {
     
     /// Set position of all sub views in this view
     func setLayout() {
-        
-    }
-    
-    /// Enable delegates for specific sub views in this view
-    func setDelegate() {
         
     }
 }
