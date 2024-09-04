@@ -1,0 +1,6 @@
+framework module Pods_SNS_PracticeTests {
+  umbrella header "Pods-SNS_PracticeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
