@@ -80,7 +80,7 @@ final class ProfileViewController: BaseViewController {
         infoStackView.snp.makeConstraints {
             $0.width.equalTo(safeArea)
             $0.top.equalTo(rootStackView)
-            $0.bottom.equalTo(photos.snp_topMargin)
+            $0.bottom.equalTo(photos.snp.top)
         }
         
         profileImage.snp.makeConstraints {
@@ -112,7 +112,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

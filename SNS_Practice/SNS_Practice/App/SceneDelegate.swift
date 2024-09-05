@@ -14,9 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let home: HomeViewController = HomeViewController()
+        let profile: ProfileViewController = ProfileViewController()
+        let tabBar: UITabBarController = UITabBarController()
+        
+        home.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+        profile.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle.fill"), tag: 1)
+        tabBar.viewControllers = [home, profile]
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ProfileViewController()
+        window?.rootViewController = tabBar
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
     }
