@@ -25,4 +25,11 @@ class BaseViewController: UIViewController {
     func setLayout() {
         
     }
+    
+    /// Use this if you want to use auto layout
+    final func enableAutoLayouts(_ views: UIView...) {
+        views.forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
 }

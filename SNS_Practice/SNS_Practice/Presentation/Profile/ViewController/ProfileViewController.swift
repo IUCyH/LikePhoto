@@ -9,9 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
-final class ProfileViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class ProfileViewController: BaseViewController {
     
-    private let cellReuseIdentifier: String = "PhotoCell"
+    private let cellReuseIdentifier: String = PhotoCollectionViewCell.identifier
+    private lazy var collectionViewCellSize: CGFloat = calculateCellSize(itemCountPerRow: 3, spacingPerCell: 0)
     private let rootStackView: UIStackView = UIStackView()
     private let infoStackView: UIStackView = UIStackView()
     private let name: UILabel = UILabel()
@@ -64,11 +65,10 @@ final class ProfileViewController: BaseViewController, UICollectionViewDataSourc
         let safeArea = view.safeAreaLayoutGuide
         
         infoStackView.addArrangedSubviews(profileImage, name)
-        
         rootStackView.addArrangedSubviews(infoStackView, photos)
-        
         view.addSubViews(rootStackView)
-        view.enableAutoLayouts(rootStackView, infoStackView, profileImage, name, photos)
+        
+        enableAutoLayouts(rootStackView, infoStackView, profileImage, name, photos)
         
         rootStackView.snp.makeConstraints {
             $0.centerX.equalTo(safeArea)
@@ -93,6 +93,20 @@ final class ProfileViewController: BaseViewController, UICollectionViewDataSourc
         }
     }
     
+    private func calculateCellSize(itemCountPerRow: CGFloat, spacingPerCell: CGFloat) -> CGFloat {
+        let width: CGFloat = photos.bounds.width
+        let numberOfItemsPerRow: CGFloat = itemCountPerRow
+        let spacing: CGFloat = spacingPerCell
+        let availableWidth: CGFloat = width - spacing * (numberOfItemsPerRow + 1)
+       
+        let size: CGFloat = floor(availableWidth / numberOfItemsPerRow)
+        return size
+    }
+}
+
+// MARK: UICollectionView
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -102,13 +116,7 @@ final class ProfileViewController: BaseViewController, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.bounds.width
-        let numberOfItemsPerRow: CGFloat = 4
-        let spacing: CGFloat = 0
-        let availableWidth: CGFloat = width - spacing * (numberOfItemsPerRow + 1)
-        let itemSize: CGFloat = floor(availableWidth / numberOfItemsPerRow)
-        
-        return CGSize(width: itemSize, height: itemSize)
+        return CGSize(width: collectionViewCellSize, height: collectionViewCellSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

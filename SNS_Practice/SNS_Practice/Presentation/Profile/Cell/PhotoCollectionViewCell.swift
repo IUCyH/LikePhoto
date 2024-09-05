@@ -11,6 +11,7 @@ import SnapKit
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
     
+    static let identifier: String = "PhotoCell"
     private let imageView: UIImageView = UIImageView()
     
     override init(frame: CGRect) {
@@ -36,7 +37,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     
     private func setLayout() {
         contentView.addSubViews(imageView)
-        contentView.enableAutoLayouts(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         imageView.snp.makeConstraints {
             $0.centerX.equalTo(contentView.safeAreaLayoutGuide)

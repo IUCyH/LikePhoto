@@ -9,19 +9,13 @@ import UIKit
 
 extension UIView {
     
-    func addSubViews(_ views: UIView...) {
+    final func addSubViews(_ views: UIView...) {
         views.forEach { view in
             addSubview(view)
         }
     }
     
-    func enableAutoLayouts(_ views: UIView...) {
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
-    
-    func makeRoundedCorner(radius: CGFloat) {
+    final func makeRoundedCorner(radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = true
     }
