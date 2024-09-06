@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-final class PhotoCollectionViewCell: UICollectionViewCell {
+final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     
     static let identifier: String = "PhotoCell"
     private let imageView: UIImageView = UIImageView()

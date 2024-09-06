@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-final class RecentPostTableViewCell: UITableViewCell {
+final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
     
     static let identifier: String = "RecentPostCell"
     private let rootStackView: UIStackView = UIStackView()

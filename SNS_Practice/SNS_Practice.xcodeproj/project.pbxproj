@@ -10,6 +10,7 @@
 		4DB23D11017C2D192F6A0312 /* Pods_SNS_Practice_SNS_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */; };
 		5E7FB98FEB4DD138BDBD6920 /* Pods_SNS_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128F6D89898AFE3BB5EAA524 /* Pods_SNS_PracticeTests.framework */; };
 		67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */; };
+		FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */; };
 		FED3D20A2C89E31C00A3CC19 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3D2092C89E31C00A3CC19 /* HomeViewController.swift */; };
 		FED3D20D2C89E50200A3CC19 /* RecentPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3D20C2C89E50200A3CC19 /* RecentPostTableViewCell.swift */; };
 		FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC22C884F27007EB69A /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		80B5FDF11E91ABA0EF312C81 /* Pods-SNS_Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS_Practice.debug.xcconfig"; path = "Target Support Files/Pods-SNS_Practice/Pods-SNS_Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Practice_SNS_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF28452EACB51E75FDB5CA1E /* Pods-SNS_Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS_Practice.release.xcconfig"; path = "Target Support Files/Pods-SNS_Practice/Pods-SNS_Practice.release.xcconfig"; sourceTree = "<group>"; };
+		FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
 		FED3D2092C89E31C00A3CC19 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FED3D20C2C89E50200A3CC19 /* RecentPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPostTableViewCell.swift; sourceTree = "<group>"; };
 		FEDCBDBF2C884F27007EB69A /* SNS_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNS_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,14 @@
 				084F955975C6ECCACB03E6EE /* Pods-SNS_PracticeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FE50CC892C8A9F2F009B6386 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		FED3D2082C89E2D200A3CC19 /* Home */ = {
@@ -250,6 +260,7 @@
 		FEDCBDFF2C885314007EB69A /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				FE50CC892C8A9F2F009B6386 /* Protocol */,
 				FEDCBE002C885325007EB69A /* Extension */,
 			);
 			path = Global;
@@ -524,6 +535,7 @@
 				FEDCBE022C885339007EB69A /* UIView+.swift in Sources */,
 				FEDCBDFE2C8852A5007EB69A /* BaseViewController.swift in Sources */,
 				FEDCBDC72C884F27007EB69A /* ProfileViewController.swift in Sources */,
+				FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */,
 				FED3D20A2C89E31C00A3CC19 /* HomeViewController.swift in Sources */,
 				FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */,
 				FEDCBDC52C884F27007EB69A /* SceneDelegate.swift in Sources */,
