@@ -76,8 +76,18 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
         }
         
         postImageView.snp.makeConstraints {
-            $0.width.equalTo(rootStackView)
+            $0.centerX.equalTo(rootStackView)
+            $0.centerY.equalTo(rootStackView)
+            $0.leading.equalTo(rootStackView)
+            $0.trailing.equalTo(rootStackView)
             $0.height.equalTo(rootStackView).offset(-130)
+        }
+        
+        textContentView.snp.makeConstraints {
+            $0.leading.equalTo(rootStackView).offset(10)
+            $0.trailing.equalTo(rootStackView).offset(-10)
+            $0.top.equalTo(postImageView.snp.bottom)
+            $0.bottom.equalTo(rootStackView)
         }
     }
 }
