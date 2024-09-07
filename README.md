@@ -1,2 +1,2 @@
 # LikePhoto SNS
-## [개발일지](https://iucyh.notion.site/LikePhoto-a71dbe383e46410ca3f77277fc2b56bc?pvs=4)
+## [개발일지](https://jlcy.notion.site/LikePhoto-bd71137d497c4a69af2183747268b4a7?pvs=4)
