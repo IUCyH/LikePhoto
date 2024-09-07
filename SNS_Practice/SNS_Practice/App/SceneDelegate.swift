@@ -15,12 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let home: HomeViewController = HomeViewController()
+        let explore: ExploreViewController = ExploreViewController()
         let profile: ProfileViewController = ProfileViewController()
         let tabBar: UITabBarController = UITabBarController()
         
-        home.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
-        profile.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle.fill"), tag: 1)
-        tabBar.viewControllers = [home, profile]
+        home.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house.fill"), tag: 0)
+        explore.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.crop.circle.fill"), tag: 2)
+        tabBar.viewControllers = [home, explore, profile]
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

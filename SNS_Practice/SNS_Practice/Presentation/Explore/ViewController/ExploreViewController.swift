@@ -1,23 +1,19 @@
 //
-//  ViewController.swift
+//  ExploreViewController.swift
 //  SNS_Practice
 //
-//  Created by Jaemin Hong on 9/4/24.
+//  Created by Jaemin Hong on 9/7/24.
 //
 
 import UIKit
-import SnapKit
-import Then
 
-final class ProfileViewController: BaseViewController {
+final class ExploreViewController: BaseViewController {
     
-    private let cellReuseIdentifier: String = PhotoCollectionViewCell.identifier
+    private let cellReuseIdentifier: String = RecommendPostCollectionViewCell.identifier
     private lazy var cellSize: CGFloat = calculateCellSize(itemCountPerRow: 3, spacingPerCell: 0)
     private let rootStackView: UIStackView = UIStackView()
-    private let infoStackView: UIStackView = UIStackView()
-    private let name: UILabel = UILabel()
-    private let profileImage: UIImageView = UIImageView()
-    private let photos: UICollectionView = {
+    private let searchField: UITextField = UITextField()
+    private let recommendPosts: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -35,40 +31,31 @@ final class ProfileViewController: BaseViewController {
     override func setStyle() {
         rootStackView.do {
             $0.axis = .vertical
-            $0.spacing = 30
+            $0.alignment = .center
+            $0.spacing = 10
         }
         
-        infoStackView.do {
-            $0.axis = .horizontal
-            $0.spacing = 25
+        searchField.do {
+            $0.borderStyle = .roundedRect
+            $0.placeholder = "Search"
+            $0.autocapitalizationType = .none
+            $0.clearButtonMode = .whileEditing
         }
         
-        name.do {
-            $0.text = "Lucy"
-            $0.font = .systemFont(ofSize: 35, weight: .bold)
-        }
-        
-        profileImage.do {
-            $0.image = UIImage(systemName: "person.circle.fill")
-            $0.makeRoundedCorner(radius: 8.5)
-            $0.contentMode = .scaleAspectFit
-        }
-        
-        photos.do {
+        recommendPosts.do {
             $0.dataSource = self
             $0.delegate = self
-            $0.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+            $0.register(RecommendPostCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         }
     }
     
     override func setLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        infoStackView.addArrangedSubviews(profileImage, name)
-        rootStackView.addArrangedSubviews(infoStackView, photos)
+        rootStackView.addArrangedSubviews(searchField, recommendPosts)
         view.addSubViews(rootStackView)
         
-        enableAutoLayouts(rootStackView, infoStackView, profileImage, name, photos)
+        enableAutoLayouts(rootStackView, searchField, recommendPosts)
         
         rootStackView.snp.makeConstraints {
             $0.centerX.equalTo(safeArea)
@@ -77,42 +64,35 @@ final class ProfileViewController: BaseViewController {
             $0.bottom.equalTo(safeArea)
         }
         
-        infoStackView.snp.makeConstraints {
-            $0.width.equalTo(safeArea)
-            $0.top.equalTo(rootStackView)
-            $0.bottom.equalTo(photos.snp.top)
+        searchField.snp.makeConstraints {
+            $0.width.equalTo(safeArea).offset(-50)
         }
         
-        profileImage.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(100)
-        }
-        
-        photos.snp.makeConstraints {
+        recommendPosts.snp.makeConstraints {
             $0.width.equalTo(safeArea)
         }
     }
     
     private func calculateCellSize(itemCountPerRow: CGFloat, spacingPerCell: CGFloat) -> CGFloat {
-        let width: CGFloat = photos.bounds.width
+        let width: CGFloat = recommendPosts.bounds.width
         let numberOfItemsPerRow: CGFloat = itemCountPerRow
         let spacing: CGFloat = spacingPerCell
         let availableWidth: CGFloat = width - spacing * (numberOfItemsPerRow + 1)
-       
+        
         let size: CGFloat = floor(availableWidth / numberOfItemsPerRow)
         return size
     }
 }
 
 // MARK: UICollectionView
-extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ExploreViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

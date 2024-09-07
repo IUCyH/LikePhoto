@@ -43,6 +43,7 @@ final class HomeViewController: BaseViewController {
     }
 }
 
+// MARK: UITableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
