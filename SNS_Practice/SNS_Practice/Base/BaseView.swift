@@ -31,7 +31,7 @@ class BaseView: UIView {
         
     }
     
-    func enableAutoLayouts(_ views: UIView...) {
+    final func enableAutoLayouts(_ views: UIView...) {
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
         }
