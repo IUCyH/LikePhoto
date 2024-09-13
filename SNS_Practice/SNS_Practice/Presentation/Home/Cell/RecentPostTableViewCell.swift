@@ -13,8 +13,15 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
     
     static let identifier: String = "RecentPostCell"
     private let rootStackView: UIStackView = UIStackView()
-    private let postImageView: UIImageView = UIImageView()
+    private let imageContentView: UIImageView = UIImageView()
     private let textContentView: UILabel = UILabel()
+    private let postImage: UIImage = UIImage(systemName: "lock.square.fill")! 
+    private let postText: String = """
+                    안녕! 이건 첫번째 줄이란다
+                    이건.... 두번째?!
+                    와 이건 세번째!
+                    헐 네번째까지??
+                    """
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,29 +50,24 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
             $0.spacing = 10
         }
         
-        postImageView.do {
-            $0.image = UIImage(systemName: "lock.square.fill")
+        imageContentView.do {
+            $0.image = postImage
             $0.contentMode = .scaleAspectFit
             $0.backgroundColor = .black
         }
         
         textContentView.do {
             $0.numberOfLines = 20
-            $0.text = """
-                    안녕! 이건 첫번째 줄이란다
-                    이건.... 두번째?!
-                    와 이건 세번째!
-                    헐 네번째까지??
-                    """
+            $0.text = postText
         }
     }
     
     private func setLayout() {
-        rootStackView.addArrangedSubviews(postImageView, textContentView)
+        rootStackView.addArrangedSubviews(imageContentView, textContentView)
         contentView.addSubViews(rootStackView)
         
         rootStackView.translatesAutoresizingMaskIntoConstraints = false
-        postImageView.translatesAutoresizingMaskIntoConstraints = false
+        imageContentView.translatesAutoresizingMaskIntoConstraints = false
         textContentView.translatesAutoresizingMaskIntoConstraints = false
         
         rootStackView.snp.makeConstraints {
@@ -75,7 +77,7 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
             $0.centerY.equalTo(contentView)
         }
         
-        postImageView.snp.makeConstraints {
+        imageContentView.snp.makeConstraints {
             $0.centerX.equalTo(rootStackView)
             $0.centerY.equalTo(rootStackView)
             $0.leading.equalTo(rootStackView)
@@ -86,7 +88,7 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
         textContentView.snp.makeConstraints {
             $0.leading.equalTo(rootStackView).offset(10)
             $0.trailing.equalTo(rootStackView).offset(-10)
-            $0.top.equalTo(postImageView.snp.bottom)
+            $0.top.equalTo(imageContentView.snp.bottom)
             $0.bottom.equalTo(rootStackView)
         }
     }

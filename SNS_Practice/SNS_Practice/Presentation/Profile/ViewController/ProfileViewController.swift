@@ -11,15 +11,13 @@ import Then
 
 final class ProfileViewController: BaseViewController {
     
-    private let cellReuseIdentifier: String = PhotoCollectionViewCell.identifier
-    private lazy var cellSize: CGFloat = calculateCellSize(itemCountPerRow: 3, spacingPerCell: 0)
     private let rootStackView: UIStackView = UIStackView()
     private let infoStackView: UIStackView = UIStackView()
     private let name: UILabel = UILabel()
     private let profileImage: UIImageView = UIImageView()
-    private let photos: UICollectionView = {
+    private let photos: BaseCollectionView<PhotoCollectionViewCell> = {
         let layout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let view = BaseCollectionView<PhotoCollectionViewCell>(frame: .zero, collectionViewLayout: layout)
         
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
@@ -55,9 +53,10 @@ final class ProfileViewController: BaseViewController {
         }
         
         photos.do {
-            $0.dataSource = self
-            $0.delegate = self
-            $0.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+            $0.cellIdentifier = PhotoCollectionViewCell.identifier
+            $0.cellSizeCalculateSource = (3, 0)
+            $0.numberOfItemsInSection = 15
+            $0.sectionCount = 1
         }
     }
     
@@ -91,37 +90,5 @@ final class ProfileViewController: BaseViewController {
         photos.snp.makeConstraints {
             $0.width.equalTo(safeArea)
         }
-    }
-    
-    private func calculateCellSize(itemCountPerRow: CGFloat, spacingPerCell: CGFloat) -> CGFloat {
-        let width: CGFloat = photos.bounds.width
-        let numberOfItemsPerRow: CGFloat = itemCountPerRow
-        let spacing: CGFloat = spacingPerCell
-        let availableWidth: CGFloat = width - spacing * (numberOfItemsPerRow + 1)
-       
-        let size: CGFloat = floor(availableWidth / numberOfItemsPerRow)
-        return size
-    }
-}
-
-// MARK: UICollectionView
-extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellSize, height: cellSize)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)
-        
-        return cell
     }
 }

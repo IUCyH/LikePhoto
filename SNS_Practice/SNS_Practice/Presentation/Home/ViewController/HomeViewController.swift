@@ -11,7 +11,12 @@ import SnapKit
 
 final class HomeViewController: BaseViewController {
     
+    // MARK: Cell
     private let cellReuseIdentifier: String = RecentPostTableViewCell.identifier
+    private let tableViewSectionCount: Int = 1
+    private let initialCellCount: Int = 10
+    private let cellHeight: CGFloat = 500
+    // MARK: Component
     private let posts: UITableView = UITableView(frame: .zero, style: .plain)
 
     override func viewDidLoad() {
@@ -47,15 +52,15 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return tableViewSectionCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return initialCellCount
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

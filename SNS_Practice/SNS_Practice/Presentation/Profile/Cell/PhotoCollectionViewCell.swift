@@ -13,6 +13,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     
     static let identifier: String = "PhotoCell"
     private let imageView: UIImageView = UIImageView()
+    private let postImage: UIImage = UIImage(systemName: "person.circle.fill")!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +31,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     
     private func setStyle() {
         imageView.do {
-            $0.image = UIImage(systemName: "person.circle.fill")
+            $0.image = postImage
             $0.contentMode = .scaleAspectFit
         }
     }

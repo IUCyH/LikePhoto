@@ -28,6 +28,7 @@
 		FEDCBE072C88610E007EB69A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBE062C88610E007EB69A /* PhotoCollectionViewCell.swift */; };
 		FEEBB0AC2C8C9D3100A5D770 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB0AB2C8C9D3100A5D770 /* ExploreViewController.swift */; };
 		FEEBB0B02C8C9E9C00A5D770 /* RecommendPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB0AF2C8C9E9C00A5D770 /* RecommendPostCollectionViewCell.swift */; };
+		FEFC33312C948D7A00B99250 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFC33302C948D7A00B99250 /* BaseCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		FEDCBE062C88610E007EB69A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		FEEBB0AB2C8C9D3100A5D770 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		FEEBB0AF2C8C9E9C00A5D770 /* RecommendPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendPostCollectionViewCell.swift; sourceTree = "<group>"; };
+		FEFC33302C948D7A00B99250 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				FEDCBDFB2C88516D007EB69A /* BaseView.swift */,
 				FEDCBDFD2C8852A5007EB69A /* BaseViewController.swift */,
+				FEFC33302C948D7A00B99250 /* BaseCollectionView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */,
 				FEEBB0AC2C8C9D3100A5D770 /* ExploreViewController.swift in Sources */,
 				FEDCBDC52C884F27007EB69A /* SceneDelegate.swift in Sources */,
+				FEFC33312C948D7A00B99250 /* BaseCollectionView.swift in Sources */,
 				FED3D20D2C89E50200A3CC19 /* RecentPostTableViewCell.swift in Sources */,
 				FEDCBDFC2C88516D007EB69A /* BaseView.swift in Sources */,
 			);

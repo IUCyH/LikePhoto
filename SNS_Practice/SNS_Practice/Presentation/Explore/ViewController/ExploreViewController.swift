@@ -9,13 +9,12 @@ import UIKit
 
 final class ExploreViewController: BaseViewController {
     
-    private let cellReuseIdentifier: String = RecommendPostCollectionViewCell.identifier
-    private lazy var cellSize: CGFloat = calculateCellSize(itemCountPerRow: 3, spacingPerCell: 0)
+    // MARK: Component
     private let rootStackView: UIStackView = UIStackView()
     private let searchField: UITextField = UITextField()
-    private let recommendPosts: UICollectionView = {
+    private let recommendPosts: BaseCollectionView<RecommendPostCollectionViewCell> = {
         let layout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let view = BaseCollectionView<RecommendPostCollectionViewCell>(frame: .zero, collectionViewLayout: layout)
         
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
@@ -41,11 +40,12 @@ final class ExploreViewController: BaseViewController {
             $0.autocapitalizationType = .none
             $0.clearButtonMode = .whileEditing
         }
-        
+   
         recommendPosts.do {
-            $0.dataSource = self
-            $0.delegate = self
-            $0.register(RecommendPostCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+            $0.cellIdentifier = RecommendPostCollectionViewCell.identifier
+            $0.cellSizeCalculateSource = (3, 0)
+            $0.numberOfItemsInSection = 100
+            $0.sectionCount = 1
         }
     }
     
@@ -71,37 +71,5 @@ final class ExploreViewController: BaseViewController {
         recommendPosts.snp.makeConstraints {
             $0.width.equalTo(safeArea)
         }
-    }
-    
-    private func calculateCellSize(itemCountPerRow: CGFloat, spacingPerCell: CGFloat) -> CGFloat {
-        let width: CGFloat = recommendPosts.bounds.width
-        let numberOfItemsPerRow: CGFloat = itemCountPerRow
-        let spacing: CGFloat = spacingPerCell
-        let availableWidth: CGFloat = width - spacing * (numberOfItemsPerRow + 1)
-        
-        let size: CGFloat = floor(availableWidth / numberOfItemsPerRow)
-        return size
-    }
-}
-
-// MARK: UICollectionView
-extension ExploreViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellSize, height: cellSize)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)
-        
-        return cell
     }
 }

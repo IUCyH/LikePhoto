@@ -13,6 +13,7 @@ final class RecommendPostCollectionViewCell: UICollectionViewCell, IdentifiableC
     
     static let identifier: String = "RecommendPostCell"
     private let photo: UIImageView = UIImageView()
+    private let postImage: UIImage = UIImage(systemName: "books.vertical.fill")!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +32,7 @@ final class RecommendPostCollectionViewCell: UICollectionViewCell, IdentifiableC
     
     private func setStyle() {
         photo.do {
-            $0.image = UIImage(systemName: "books.vertical.fill")
+            $0.image = postImage
             $0.contentMode = .scaleAspectFit
         }
     }
