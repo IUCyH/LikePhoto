@@ -15,6 +15,13 @@ extension UIView {
         }
     }
     
+    /// Use this if you want to use auto layout
+    final func enableAutoLayouts(_ views: UIView...) {
+        views.forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    
     final func makeRoundedCorner(radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = true

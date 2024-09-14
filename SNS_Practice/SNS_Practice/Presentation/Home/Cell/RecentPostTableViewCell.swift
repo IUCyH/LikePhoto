@@ -12,10 +12,18 @@ import SnapKit
 final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
     
     static let identifier: String = "RecentPostCell"
+    
     private let rootStackView: UIStackView = UIStackView()
+    private let interactionComponentsStackView: UIStackView = UIStackView()
+    
+    private let userInfoView: UserInfoDisplayView = UserInfoDisplayView()
     private let imageContentView: UIImageView = UIImageView()
     private let textContentView: UILabel = UILabel()
-    private let postImage: UIImage = UIImage(systemName: "lock.square.fill")! 
+    private let likeButton: LikeButton = LikeButton()
+    private let commentButton: CommentsDisplayButton = CommentsDisplayButton()
+    private let paddingView: UIView = UIView()
+    
+    private let postImage: UIImage = UIImage(systemName: "lock.square.fill")!
     private let postText: String = """
                     안녕! 이건 첫번째 줄이란다
                     이건.... 두번째?!
@@ -60,36 +68,53 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
             $0.numberOfLines = 20
             $0.text = postText
         }
+        
+        interactionComponentsStackView.do {
+            $0.axis = .horizontal
+            $0.alignment = .leading
+            $0.spacing = 10
+        }
     }
     
     private func setLayout() {
-        rootStackView.addArrangedSubviews(imageContentView, textContentView)
+        interactionComponentsStackView.addArrangedSubviews(likeButton, commentButton)
+        rootStackView.addArrangedSubviews(userInfoView, imageContentView, textContentView, interactionComponentsStackView, paddingView)
         contentView.addSubViews(rootStackView)
         
-        rootStackView.translatesAutoresizingMaskIntoConstraints = false
-        imageContentView.translatesAutoresizingMaskIntoConstraints = false
-        textContentView.translatesAutoresizingMaskIntoConstraints = false
+        enableAutoLayouts(rootStackView, userInfoView, imageContentView, textContentView, interactionComponentsStackView, likeButton, commentButton, paddingView)
         
         rootStackView.snp.makeConstraints {
             $0.width.equalTo(contentView)
             $0.height.equalTo(contentView)
             $0.centerX.equalTo(contentView)
             $0.centerY.equalTo(contentView)
+            $0.bottom.equalTo(contentView)
+        }
+        
+        userInfoView.snp.makeConstraints {
+            $0.leading.equalTo(rootStackView).offset(5)
+            $0.trailing.equalTo(rootStackView)
         }
         
         imageContentView.snp.makeConstraints {
-            $0.centerX.equalTo(rootStackView)
-            $0.centerY.equalTo(rootStackView)
             $0.leading.equalTo(rootStackView)
             $0.trailing.equalTo(rootStackView)
-            $0.height.equalTo(rootStackView).offset(-130)
+            $0.height.equalTo(350)
         }
         
         textContentView.snp.makeConstraints {
             $0.leading.equalTo(rootStackView).offset(10)
             $0.trailing.equalTo(rootStackView).offset(-10)
-            $0.top.equalTo(imageContentView.snp.bottom)
-            $0.bottom.equalTo(rootStackView)
+        }
+        
+        interactionComponentsStackView.snp.makeConstraints {
+            $0.leading.equalTo(rootStackView).offset(10)
+            $0.top.equalTo(textContentView.snp.bottom).offset(15)
+        }
+        
+        paddingView.snp.makeConstraints {
+            $0.height.equalTo(15)
+            $0.width.equalTo(rootStackView)
         }
     }
 }

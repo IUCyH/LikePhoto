@@ -15,7 +15,6 @@ final class HomeViewController: BaseViewController {
     private let cellReuseIdentifier: String = RecentPostTableViewCell.identifier
     private let tableViewSectionCount: Int = 1
     private let initialCellCount: Int = 10
-    private let cellHeight: CGFloat = 500
     // MARK: Component
     private let posts: UITableView = UITableView(frame: .zero, style: .plain)
 
@@ -57,10 +56,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return initialCellCount
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

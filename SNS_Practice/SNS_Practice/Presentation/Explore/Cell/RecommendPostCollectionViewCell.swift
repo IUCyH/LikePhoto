@@ -40,7 +40,7 @@ final class RecommendPostCollectionViewCell: UICollectionViewCell, IdentifiableC
     private func setLayout() {
         contentView.addSubViews(photo)
         
-        photo.translatesAutoresizingMaskIntoConstraints = false
+        enableAutoLayouts(photo)
         
         photo.snp.makeConstraints {
             $0.centerX.equalTo(contentView)

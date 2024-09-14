@@ -38,7 +38,8 @@ final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     
     private func setLayout() {
         contentView.addSubViews(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        enableAutoLayouts(imageView)
         
         imageView.snp.makeConstraints {
             $0.centerX.equalTo(contentView.safeAreaLayoutGuide)

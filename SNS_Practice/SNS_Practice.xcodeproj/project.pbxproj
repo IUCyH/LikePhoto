@@ -11,6 +11,9 @@
 		5E7FB98FEB4DD138BDBD6920 /* Pods_SNS_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128F6D89898AFE3BB5EAA524 /* Pods_SNS_PracticeTests.framework */; };
 		67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */; };
 		FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */; };
+		FE93A88B2C95F7C900810F61 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88A2C95F7C900810F61 /* LikeButton.swift */; };
+		FE93A88D2C95FD8300810F61 /* CommentsDisplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */; };
+		FE93A8902C96029900810F61 /* UserInfoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */; };
 		FED3D20A2C89E31C00A3CC19 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3D2092C89E31C00A3CC19 /* HomeViewController.swift */; };
 		FED3D20D2C89E50200A3CC19 /* RecentPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3D20C2C89E50200A3CC19 /* RecentPostTableViewCell.swift */; };
 		FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDCBDC22C884F27007EB69A /* AppDelegate.swift */; };
@@ -59,6 +62,9 @@
 		A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Practice_SNS_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF28452EACB51E75FDB5CA1E /* Pods-SNS_Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS_Practice.release.xcconfig"; path = "Target Support Files/Pods-SNS_Practice/Pods-SNS_Practice.release.xcconfig"; sourceTree = "<group>"; };
 		FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
+		FE93A88A2C95F7C900810F61 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDisplayButton.swift; sourceTree = "<group>"; };
+		FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDisplayView.swift; sourceTree = "<group>"; };
 		FED3D2092C89E31C00A3CC19 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FED3D20C2C89E50200A3CC19 /* RecentPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPostTableViewCell.swift; sourceTree = "<group>"; };
 		FEDCBDBF2C884F27007EB69A /* SNS_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNS_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,10 +148,29 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		FE93A8892C95F71700810F61 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				FE93A88A2C95F7C900810F61 /* LikeButton.swift */,
+				FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		FE93A88E2C96025200810F61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FED3D2082C89E2D200A3CC19 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				FED3D20B2C89E4D800A3CC19 /* Cell */,
+				FE93A8892C95F71700810F61 /* Component */,
+				FE93A88E2C96025200810F61 /* View */,
 				FED3D20E2C89E8D200A3CC19 /* ViewController */,
 			);
 			path = Home;
@@ -570,12 +595,15 @@
 				FEDCBDFE2C8852A5007EB69A /* BaseViewController.swift in Sources */,
 				FEDCBDC72C884F27007EB69A /* ProfileViewController.swift in Sources */,
 				FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */,
+				FE93A8902C96029900810F61 /* UserInfoDisplayView.swift in Sources */,
 				FED3D20A2C89E31C00A3CC19 /* HomeViewController.swift in Sources */,
 				FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */,
 				FEEBB0AC2C8C9D3100A5D770 /* ExploreViewController.swift in Sources */,
 				FEDCBDC52C884F27007EB69A /* SceneDelegate.swift in Sources */,
 				FEFC33312C948D7A00B99250 /* BaseCollectionView.swift in Sources */,
 				FED3D20D2C89E50200A3CC19 /* RecentPostTableViewCell.swift in Sources */,
+				FE93A88B2C95F7C900810F61 /* LikeButton.swift in Sources */,
+				FE93A88D2C95FD8300810F61 /* CommentsDisplayButton.swift in Sources */,
 				FEDCBDFC2C88516D007EB69A /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

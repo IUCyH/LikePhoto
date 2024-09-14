@@ -30,10 +30,4 @@ class BaseView: UIView {
     func setLayout() {
         
     }
-    
-    final func enableAutoLayouts(_ views: UIView...) {
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
 }
