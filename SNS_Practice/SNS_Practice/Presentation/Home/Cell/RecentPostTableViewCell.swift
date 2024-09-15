@@ -62,6 +62,7 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
             $0.image = postImage
             $0.contentMode = .scaleAspectFit
             $0.backgroundColor = .black
+            $0.tintColor = .systemBlue
         }
         
         textContentView.do {

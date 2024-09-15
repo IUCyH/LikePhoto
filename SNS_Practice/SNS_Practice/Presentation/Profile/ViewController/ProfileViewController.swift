@@ -50,6 +50,7 @@ final class ProfileViewController: BaseViewController {
             $0.image = UIImage(systemName: "person.circle.fill")
             $0.makeRoundedCorner(radius: 8.5)
             $0.contentMode = .scaleAspectFit
+            $0.tintColor = .systemBlue
         }
         
         photos.do {

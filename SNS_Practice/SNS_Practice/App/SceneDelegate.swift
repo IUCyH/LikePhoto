@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         home.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house.fill"), tag: 0)
         explore.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 1)
-        profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.crop.circle.fill"), tag: 2)
+        profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.fill"), tag: 2)
         tabBar.viewControllers = [home, explore, profile]
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

@@ -25,7 +25,6 @@ final class UserInfoDisplayView: BaseView {
         profileImageView.do {
             $0.image = UIImage(systemName: "person.circle.fill")
             $0.contentMode = .scaleAspectFit
-            $0.tintColor = .black
         }
         
         nameLabel.do {

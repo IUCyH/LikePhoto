@@ -34,6 +34,7 @@ final class RecommendPostCollectionViewCell: UICollectionViewCell, IdentifiableC
         photo.do {
             $0.image = postImage
             $0.contentMode = .scaleAspectFit
+            $0.tintColor = .systemBlue
         }
     }
     
