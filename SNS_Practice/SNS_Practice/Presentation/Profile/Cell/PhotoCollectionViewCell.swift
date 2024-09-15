@@ -12,7 +12,7 @@ import SnapKit
 final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     
     static let identifier: String = "PhotoCell"
-    private let imageView: UIImageView = UIImageView()
+    private let postImageView: UIImageView = UIImageView()
     private let postImage: UIImage = UIImage(systemName: "person.circle.fill")!
     
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     }
     
     private func setStyle() {
-        imageView.do {
+        postImageView.do {
             $0.image = postImage
             $0.contentMode = .scaleAspectFit
             $0.tintColor = .systemBlue
@@ -38,11 +38,11 @@ final class PhotoCollectionViewCell: UICollectionViewCell, IdentifiableCell {
     }
     
     private func setLayout() {
-        contentView.addSubViews(imageView)
+        contentView.addSubViews(postImageView)
         
-        enableAutoLayouts(imageView)
+        enableAutoLayouts(postImageView)
         
-        imageView.snp.makeConstraints {
+        postImageView.snp.makeConstraints {
             $0.centerX.equalTo(contentView.safeAreaLayoutGuide)
             $0.centerY.equalTo(contentView.safeAreaLayoutGuide)
             $0.width.equalTo(contentView)

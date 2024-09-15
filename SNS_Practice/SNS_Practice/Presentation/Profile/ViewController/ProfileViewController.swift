@@ -13,8 +13,14 @@ final class ProfileViewController: BaseViewController {
     
     private let rootStackView: UIStackView = UIStackView()
     private let infoStackView: UIStackView = UIStackView()
+    private let userMetaStackView: UIStackView = UIStackView()
+    private let followInfoStackView: UIStackView = UIStackView()
+    
     private let name: UILabel = UILabel()
-    private let profileImage: UIImageView = UIImageView()
+    private let numOfFollower: UILabel = UILabel()
+    private let numOfFollowing: UILabel = UILabel()
+    private let profileImageView: UIImageView = UIImageView()
+    
     private let photos: BaseCollectionView<PhotoCollectionViewCell> = {
         let layout = UICollectionViewFlowLayout()
         let view = BaseCollectionView<PhotoCollectionViewCell>(frame: .zero, collectionViewLayout: layout)
@@ -38,15 +44,41 @@ final class ProfileViewController: BaseViewController {
         
         infoStackView.do {
             $0.axis = .horizontal
-            $0.spacing = 25
+            $0.spacing = 15
+            $0.alignment = .center
+        }
+        
+        userMetaStackView.do {
+            $0.axis = .vertical
+            $0.alignment = .leading
+            $0.spacing = 5
+        }
+        
+        followInfoStackView.do {
+            $0.axis = .horizontal
+            $0.spacing = 15
         }
         
         name.do {
             $0.text = "Lucy"
-            $0.font = .systemFont(ofSize: 35, weight: .bold)
+            $0.font = .systemFont(ofSize: 40, weight: .bold)
         }
         
-        profileImage.do {
+        numOfFollower.do {
+            $0.text = "100\nfollowers"
+            $0.numberOfLines = 2
+            $0.font = .systemFont(ofSize: 18, weight: .bold)
+            $0.textAlignment = .center
+        }
+        
+        numOfFollowing.do {
+            $0.text = "100\nfollowing"
+            $0.numberOfLines = 2
+            $0.font = .systemFont(ofSize: 18, weight: .bold)
+            $0.textAlignment = .center
+        }
+        
+        profileImageView.do {
             $0.image = UIImage(systemName: "person.circle.fill")
             $0.makeRoundedCorner(radius: 8.5)
             $0.contentMode = .scaleAspectFit
@@ -64,11 +96,13 @@ final class ProfileViewController: BaseViewController {
     override func setLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        infoStackView.addArrangedSubviews(profileImage, name)
+        followInfoStackView.addArrangedSubviews(numOfFollower, numOfFollowing)
+        userMetaStackView.addArrangedSubviews(name, followInfoStackView)
+        infoStackView.addArrangedSubviews(profileImageView, userMetaStackView)
         rootStackView.addArrangedSubviews(infoStackView, photos)
         view.addSubViews(rootStackView)
         
-        enableAutoLayouts(rootStackView, infoStackView, profileImage, name, photos)
+        enableAutoLayouts(rootStackView, infoStackView, userMetaStackView, followInfoStackView, profileImageView, name, numOfFollower, numOfFollowing, photos)
         
         rootStackView.snp.makeConstraints {
             $0.centerX.equalTo(safeArea)
@@ -83,9 +117,9 @@ final class ProfileViewController: BaseViewController {
             $0.bottom.equalTo(photos.snp.top)
         }
         
-        profileImage.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(100)
+        profileImageView.snp.makeConstraints {
+            $0.width.equalTo(150)
+            $0.height.equalTo(150)
         }
         
         photos.snp.makeConstraints {
