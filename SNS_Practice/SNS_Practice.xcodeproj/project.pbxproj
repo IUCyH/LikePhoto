@@ -11,6 +11,10 @@
 		5E7FB98FEB4DD138BDBD6920 /* Pods_SNS_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128F6D89898AFE3BB5EAA524 /* Pods_SNS_PracticeTests.framework */; };
 		67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */; };
 		FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */; };
+		FE5289022CB060870098E0A5 /* libLikeServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3043172CB04A75004033BB /* libLikeServer.a */; };
+		FE67D1072CB062BB0028DE99 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE67D1062CB062BB0028DE99 /* DataManager.swift */; };
+		FE67D10A2CB062F20028DE99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE67D1092CB062F20028DE99 /* User.swift */; };
+		FE67D1102CB067F10028DE99 /* libLikeServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE67D10F2CB067F10028DE99 /* libLikeServer.a */; };
 		FE93A88B2C95F7C900810F61 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88A2C95F7C900810F61 /* LikeButton.swift */; };
 		FE93A88D2C95FD8300810F61 /* CommentsDisplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */; };
 		FE93A8902C96029900810F61 /* UserInfoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */; };
@@ -61,7 +65,13 @@
 		80B5FDF11E91ABA0EF312C81 /* Pods-SNS_Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS_Practice.debug.xcconfig"; path = "Target Support Files/Pods-SNS_Practice/Pods-SNS_Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Practice_SNS_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF28452EACB51E75FDB5CA1E /* Pods-SNS_Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS_Practice.release.xcconfig"; path = "Target Support Files/Pods-SNS_Practice/Pods-SNS_Practice.release.xcconfig"; sourceTree = "<group>"; };
+		FE3043172CB04A75004033BB /* libLikeServer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLikeServer.a; path = "../../../Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos/libLikeServer.a"; sourceTree = "<group>"; };
+		FE3043192CB054DD004033BB /* libLikeServer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLikeServer.a; path = "../../../Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/libLikeServer.a"; sourceTree = "<group>"; };
 		FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
+		FE67D1062CB062BB0028DE99 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FE67D1092CB062F20028DE99 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FE67D10F2CB067F10028DE99 /* libLikeServer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLikeServer.a; path = "../../../Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator/libLikeServer.a"; sourceTree = "<group>"; };
+		FE67D1162CB06C810028DE99 /* URL.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = URL.xcconfig; sourceTree = "<group>"; };
 		FE93A88A2C95F7C900810F61 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDisplayButton.swift; sourceTree = "<group>"; };
 		FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDisplayView.swift; sourceTree = "<group>"; };
@@ -95,6 +105,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */,
+				FE5289022CB060870098E0A5 /* libLikeServer.a in Frameworks */,
+				FE67D1102CB067F10028DE99 /* libLikeServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +132,9 @@
 		B0A399FB5E40C0A29F974559 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE3043172CB04A75004033BB /* libLikeServer.a */,
+				FE3043192CB054DD004033BB /* libLikeServer.a */,
+				FE67D10F2CB067F10028DE99 /* libLikeServer.a */,
 				6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */,
 				A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */,
 				128F6D89898AFE3BB5EAA524 /* Pods_SNS_PracticeTests.framework */,
@@ -146,6 +161,22 @@
 				FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FE67D1052CB062980028DE99 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FE67D1062CB062BB0028DE99 /* DataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FE67D1082CB062E00028DE99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE67D1092CB062F20028DE99 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FE93A8892C95F71700810F61 /* Component */ = {
@@ -195,6 +226,7 @@
 		FEDCBDB62C884F27007EB69A = {
 			isa = PBXGroup;
 			children = (
+				FE67D1162CB06C810028DE99 /* URL.xcconfig */,
 				FEDCBDC12C884F27007EB69A /* SNS_Practice */,
 				FEDCBDD82C884F28007EB69A /* SNS_PracticeTests */,
 				FEDCBDE22C884F28007EB69A /* SNS_PracticeUITests */,
@@ -217,6 +249,8 @@
 		FEDCBDC12C884F27007EB69A /* SNS_Practice */ = {
 			isa = PBXGroup;
 			children = (
+				FE67D1082CB062E00028DE99 /* Model */,
+				FE67D1052CB062980028DE99 /* Manager */,
 				FEDCBDFA2C885161007EB69A /* Base */,
 				FEDCBDFF2C885314007EB69A /* Global */,
 				FEDCBDF92C88512B007EB69A /* Presentation */,
@@ -595,6 +629,7 @@
 				FEDCBDFE2C8852A5007EB69A /* BaseViewController.swift in Sources */,
 				FEDCBDC72C884F27007EB69A /* ProfileViewController.swift in Sources */,
 				FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */,
+				FE67D1072CB062BB0028DE99 /* DataManager.swift in Sources */,
 				FE93A8902C96029900810F61 /* UserInfoDisplayView.swift in Sources */,
 				FED3D20A2C89E31C00A3CC19 /* HomeViewController.swift in Sources */,
 				FEDCBDC32C884F27007EB69A /* AppDelegate.swift in Sources */,
@@ -605,6 +640,7 @@
 				FE93A88B2C95F7C900810F61 /* LikeButton.swift in Sources */,
 				FE93A88D2C95FD8300810F61 /* CommentsDisplayButton.swift in Sources */,
 				FEDCBDFC2C88516D007EB69A /* BaseView.swift in Sources */,
+				FE67D10A2CB062F20028DE99 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +679,7 @@
 /* Begin XCBuildConfiguration section */
 		FEDCBDE72C884F28007EB69A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE67D1162CB06C810028DE99 /* URL.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -701,11 +738,13 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
 		FEDCBDE82C884F28007EB69A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE67D1162CB06C810028DE99 /* URL.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -756,6 +795,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -770,6 +810,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBVHMLA55U;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SNS_Practice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -780,6 +821,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(SDKROOT)/usr/lib/swift",
+					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator",
+					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iucyh.SNS-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -788,6 +837,9 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -803,6 +855,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBVHMLA55U;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SNS_Practice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -813,6 +866,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(SDKROOT)/usr/lib/swift",
+					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator",
+					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iucyh.SNS-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,6 +882,9 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos/LikeServer.swiftmodule";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

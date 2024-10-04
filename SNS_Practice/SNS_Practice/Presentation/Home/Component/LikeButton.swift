@@ -29,6 +29,7 @@ final class LikeButton: UIButton {
         buttonImageView.do {
             $0.image = UIImage(systemName: "heart")
             $0.contentMode = .scaleAspectFit
+            $0.tintColor = .primary
         }
     }
     

@@ -29,6 +29,7 @@ final class CommentsDisplayButton: UIButton {
         buttonImageView.do {
             $0.image = UIImage(systemName: "bubble")
             $0.contentMode = .scaleAspectFit
+            $0.tintColor = .primary
         }
     }
     

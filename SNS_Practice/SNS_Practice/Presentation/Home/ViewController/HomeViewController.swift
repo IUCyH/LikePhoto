@@ -20,6 +20,14 @@ final class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Task {
+            let result: User? = await DataManager.shared.getUser(id: 5)
+            
+            if let result {
+                print(result.profileImage)
+            }
+        }
     }
     
     override func setStyle() {
