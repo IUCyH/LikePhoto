@@ -6,6 +6,7 @@
 // 
 
 import UIKit
+import LikeServer
 import Then
 import SnapKit
 
@@ -25,7 +26,7 @@ final class HomeViewController: BaseViewController {
             let result: User? = await DataManager.shared.getUser(id: 5)
             
             if let result {
-                print(result.profileImage)
+                print(result.name)
             }
         }
     }

@@ -17,10 +17,10 @@ final class DataManager {
         var user: User? = nil
         
         do {
-            let result = try await LikeServer.shared.get(info: RequestInfo(type: .users, path: "\(id)"))
+            let result = try await LikeServer.shared.get(.users, parameter: .userWithID(id: "\(id)"))
             
-            if let resultData = result.data(using: .utf8) {
-                user = try JSONDecoder().decode(User.self, from: resultData)
+            if case GetResult.user(let result) = result {
+                user = result
             }
         } catch {
             print("Error: \(error)")
