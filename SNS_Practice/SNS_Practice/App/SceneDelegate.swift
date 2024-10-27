@@ -6,6 +6,7 @@
 // 
 
 import UIKit
+@_exported import LikeServer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

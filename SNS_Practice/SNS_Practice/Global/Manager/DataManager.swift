@@ -6,14 +6,11 @@
 // 
 
 import Foundation
-import LikeServer
 
 final class DataManager {
     
-    static let shared: DataManager = DataManager()
-    
     /// The Parameter is just for test. will change
-    func getUser(id: Int) async -> User? {
+    func getUser(id: Int) async throws -> User? {
         var user: User? = nil
         
         do {
@@ -23,7 +20,8 @@ final class DataManager {
                 user = result
             }
         } catch {
-            print("Error: \(error)")
+            print("Error in getUser: \(error)")
+            throw error
         }
         
         return user

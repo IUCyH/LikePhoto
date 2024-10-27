@@ -238,12 +238,11 @@
 		FEDCBDC12C884F27007EB69A /* SNS_Practice */ = {
 			isa = PBXGroup;
 			children = (
-				FE67D1052CB062980028DE99 /* Manager */,
-				FEDCBDFA2C885161007EB69A /* Base */,
+				FEDCBDF82C885104007EB69A /* App */,
 				FEDCBDFF2C885314007EB69A /* Global */,
+				FEDCBDFA2C885161007EB69A /* Base */,
 				FEDCBDF92C88512B007EB69A /* Presentation */,
 				FEDCBDF62C8850E4007EB69A /* Storyboard */,
-				FEDCBDF82C885104007EB69A /* App */,
 				FEDCBDCB2C884F28007EB69A /* Assets.xcassets */,
 				FEDCBDD02C884F28007EB69A /* Info.plist */,
 				FE67D1162CB06C810028DE99 /* ServerSecret.xcconfig */,
@@ -318,6 +317,7 @@
 			children = (
 				FE50CC892C8A9F2F009B6386 /* Protocol */,
 				FEDCBE002C885325007EB69A /* Extension */,
+				FE67D1052CB062980028DE99 /* Manager */,
 			);
 			path = Global;
 			sourceTree = "<group>";

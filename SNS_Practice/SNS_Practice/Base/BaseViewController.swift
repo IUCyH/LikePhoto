@@ -9,6 +9,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    let dataManager: DataManager = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

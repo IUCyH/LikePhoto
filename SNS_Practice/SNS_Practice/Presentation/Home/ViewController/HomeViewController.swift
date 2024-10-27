@@ -6,7 +6,6 @@
 // 
 
 import UIKit
-import LikeServer
 import Then
 import SnapKit
 
@@ -23,10 +22,12 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         Task {
-            let result: User? = await DataManager.shared.getUser(id: 5)
+            let result: User? = try await dataManager.getUser(id: 5)
             
             if let result {
+                print(result.id)
                 print(result.name)
+                print(result.profileURL)
             }
         }
     }
