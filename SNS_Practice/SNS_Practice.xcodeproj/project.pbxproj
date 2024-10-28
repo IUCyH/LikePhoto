@@ -279,6 +279,9 @@
 			children = (
 				FEDCBDF82C885104007EB69A /* App */,
 				FEDCBDFF2C885314007EB69A /* Global */,
+				FEA1AFD62CCF84A900CAAEB7 /* DataStructure */,
+				FEA1AFD22CCF614E00CAAEB7 /* Factory */,
+				FE67D1052CB062980028DE99 /* Manager */,
 				FEDCBDFA2C885161007EB69A /* Base */,
 				FEDCBDF92C88512B007EB69A /* Presentation */,
 				FEDCBDF62C8850E4007EB69A /* Storyboard */,
@@ -357,9 +360,6 @@
 				FE50CC892C8A9F2F009B6386 /* Protocol */,
 				FEDCBE002C885325007EB69A /* Extension */,
 				FEA1AFD52CCF628300CAAEB7 /* Enum */,
-				FEA1AFD62CCF84A900CAAEB7 /* DataStructure */,
-				FE67D1052CB062980028DE99 /* Manager */,
-				FEA1AFD22CCF614E00CAAEB7 /* Factory */,
 			);
 			path = Global;
 			sourceTree = "<group>";

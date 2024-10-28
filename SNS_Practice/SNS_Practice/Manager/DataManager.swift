@@ -8,14 +8,6 @@
 import Foundation
 
 final class DataManager: DataManageable {
-
-    static func == (lhs: DataManager, rhs: DataManager) -> Bool {
-        ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
-    }
     
     func fetch(with type: RequestType, _ parameter: GetParameter) async throws -> GetResult {
         do {
