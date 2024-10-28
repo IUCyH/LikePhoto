@@ -14,6 +14,13 @@ final class UserInfoDisplayView: BaseView {
     private let rootStackView: UIStackView = UIStackView()
     private let profileImageView: UIImageView = UIImageView()
     private let nameLabel: UILabel = UILabel()
+    private var user: User? = nil
+    
+    init(user: User?) {
+        self.user = user
+        
+        super.init()
+    }
 
     override func setStyle() {
         rootStackView.do {
@@ -28,7 +35,7 @@ final class UserInfoDisplayView: BaseView {
         }
         
         nameLabel.do {
-            $0.text = "Lucy"
+            $0.text = user?.name ?? "User"
             $0.font = .boldSystemFont(ofSize: 20)
             $0.textAlignment = .left
         }
@@ -55,5 +62,12 @@ final class UserInfoDisplayView: BaseView {
         nameLabel.snp.makeConstraints {
             $0.centerY.equalTo(rootStackView)
         }
+    }
+    
+    func setUser(user: User) {
+        self.user = user
+        
+        setStyle()
+        setLayout()
     }
 }

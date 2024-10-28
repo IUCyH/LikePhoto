@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let home: HomeViewController = HomeViewController(user: user)
             let explore: ExploreViewController = ExploreViewController()
-            let profile: ProfileViewController = ProfileViewController(user: user)
+            let profile: ProfileViewController = ProfileViewController()
             let tabBar: UITabBarController = UITabBarController()
             
             home.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house.fill"), tag: 0)

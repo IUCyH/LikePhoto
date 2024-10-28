@@ -16,7 +16,7 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
     private let rootStackView: UIStackView = UIStackView()
     private let interactionComponentsStackView: UIStackView = UIStackView()
     
-    private let userInfoView: UserInfoDisplayView = UserInfoDisplayView()
+    private let userInfoView: UserInfoDisplayView = UserInfoDisplayView(user: nil)
     private let imageContentView: UIImageView = UIImageView()
     private let textContentView: UILabel = UILabel()
     private let likeButton: LikeButton = LikeButton()
@@ -33,9 +33,6 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setStyle()
-        setLayout()
     }
     
     @available(*, unavailable)
@@ -49,6 +46,13 @@ final class RecentPostTableViewCell: UITableViewCell, IdentifiableCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func initCell(user: User) {
+        userInfoView.setUser(user: user)
+        
+        setStyle()
+        setLayout()
     }
     
     private func setStyle() {

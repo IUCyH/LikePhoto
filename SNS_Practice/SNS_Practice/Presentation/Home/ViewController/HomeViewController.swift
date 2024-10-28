@@ -11,6 +11,8 @@ import SnapKit
 
 final class HomeViewController: BaseViewController {
     
+    // MARK: Data
+    private let user: User
     // MARK: Cell
     private let cellReuseIdentifier: String = RecentPostTableViewCell.identifier
     private let tableViewSectionCount: Int = 1
@@ -18,9 +20,10 @@ final class HomeViewController: BaseViewController {
     // MARK: Component
     private let posts: UITableView = UITableView(frame: .zero, style: .plain)
 
-    override init(user: User) {
-        super.init(user: user)
-        print(user.name)
+    init(user: User) {
+        self.user = user
+
+        super.init()
     }
     
     override func viewDidLoad() {
@@ -64,8 +67,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! RecentPostTableViewCell
        
+        cell.initCell(user: user)
+        
         return cell
     }
 }
