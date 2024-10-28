@@ -15,21 +15,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let home: HomeViewController = HomeViewController()
-        let explore: ExploreViewController = ExploreViewController()
-        let profile: ProfileViewController = ProfileViewController()
-        let tabBar: UITabBarController = UITabBarController()
-        
-        home.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house.fill"), tag: 0)
-        explore.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 1)
-        profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.fill"), tag: 2)
-        tabBar.viewControllers = [home, explore, profile]
-        
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = tabBar
-        window?.backgroundColor = .systemBackground
-        window?.makeKeyAndVisible()
+        Task {
+            let factory = DataManageableObjectFactory<DataManager>(maxReferenceCount: 1)
+            let dataManager = factory.getInstance()
+            
+            guard let dataManager else { return }
+            
+            let result = try await dataManager.fetch(with: .users, .userWithID(id: "7"))
+            
+            guard case let GetResult.user(user) = result else { return }
+            
+            let home: HomeViewController = HomeViewController(user: user)
+            let explore: ExploreViewController = ExploreViewController()
+            let profile: ProfileViewController = ProfileViewController(user: user)
+            let tabBar: UITabBarController = UITabBarController()
+            
+            home.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house.fill"), tag: 0)
+            explore.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+            profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.fill"), tag: 2)
+            tabBar.viewControllers = [home, explore, profile]
+            
+            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = tabBar
+            window?.backgroundColor = .systemBackground
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

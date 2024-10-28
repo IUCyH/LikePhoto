@@ -7,23 +7,28 @@
 
 import Foundation
 
-final class DataManager {
+final class DataManager: DataManageable {
+
+    static func == (lhs: DataManager, rhs: DataManager) -> Bool {
+        ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
     
-    /// The Parameter is just for test. will change
-    func getUser(id: Int) async throws -> User? {
-        var user: User? = nil
-        
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+    
+    func fetch(with type: RequestType, _ parameter: GetParameter) async throws -> GetResult {
         do {
-            let result = try await LikeServer.shared.get(.users, parameter: .userWithID(id: "\(id)"))
+            let result = try await LikeServer.shared.get(type, parameter: parameter)
             
-            if case GetResult.user(let result) = result {
-                user = result
-            }
+            return result
         } catch {
-            print("Error in getUser: \(error)")
+            print("Error in fetch: \(error)")
             throw error
         }
+    }
+    
+    func update(with: RequestType) {
         
-        return user
     }
 }

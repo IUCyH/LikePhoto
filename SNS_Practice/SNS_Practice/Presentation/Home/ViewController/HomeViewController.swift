@@ -18,18 +18,13 @@ final class HomeViewController: BaseViewController {
     // MARK: Component
     private let posts: UITableView = UITableView(frame: .zero, style: .plain)
 
+    override init(user: User) {
+        super.init(user: user)
+        print(user.name)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Task {
-            let result: User? = try await dataManager.getUser(id: 5)
-            
-            if let result {
-                print(result.id)
-                print(result.name)
-                print(result.profileURL)
-            }
-        }
     }
     
     override func setStyle() {
