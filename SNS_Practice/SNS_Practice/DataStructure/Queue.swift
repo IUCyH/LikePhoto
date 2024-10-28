@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Queue<T> {
+struct Queue<T: AnyObject> {
     private var elements: LinkedList<T> = LinkedList()
     
     var isEmpty: Bool { elements.isEmpty }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LinkedList<T> {
+struct LinkedList<T: AnyObject> {
     private var head: Node<T>? = nil
     private var tail: Node<T>? = nil
     private var _count: Int = 0

@@ -16,10 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         Task {
-            let factory = DataManageableObjectFactory<DataManager>(maxReferenceCount: 1)
+            let factory = DataManageableObjectFactory<DataManager>()
             let dataManager = factory.getInstance()
-            
-            guard let dataManager else { return }
             
             let result = try await dataManager.fetch(with: .users, .userWithID(id: "7"))
             

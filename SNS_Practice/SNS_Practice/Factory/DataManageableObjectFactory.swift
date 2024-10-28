@@ -7,21 +7,23 @@
 
 import Foundation
 
-final class DataManageableObjectFactory<T: DataManageable> {
+final class DataManageableObjectFactory<T> where T: DataManageable, T: AnyObject {
     
     private var instances: Queue<T> = Queue()
-    private let maxReferenceCount: Int
     
-    init(maxReferenceCount: Int) {
-        self.maxReferenceCount = maxReferenceCount
-    }
-    
-    func getInstance() -> T? {
-        if instances.count < maxReferenceCount {
-            let instance = T()
-            instances.push(instance)
+    func getInstance() -> T {
+        var instance = instances.peek()
+        
+        while(instance == nil && instances.count > 0) {
+            _ = instances.pop()
+            instance = instances.peek()
         }
         
-        return instances.peek()
+        if instance == nil {
+            instance = T()
+            instances.push(instance!)
+        }
+        
+        return instance!
     }
 }

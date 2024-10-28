@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class Node<T>: Equatable {
+final class Node<T: AnyObject>: Equatable {
 
-    let value: T
+    weak var value: T?
     var next: Node?
     
     init(value: T, next: Node? = nil) {
