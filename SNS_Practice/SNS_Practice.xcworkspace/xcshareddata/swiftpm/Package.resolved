@@ -1,0 +1,15 @@
+{
+  "originHash" : "a124ea5194a8e0315081524d1def5e7c6e5879754a255ee7166c3f5df4d30ed1",
+  "pins" : [
+    {
+      "identity" : "likeserverapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IUCyH/LikeServerAPI.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2f3fb8670e85609f7c6d0f2127e31db38710317c"
+      }
+    }
+  ],
+  "version" : 3
+}

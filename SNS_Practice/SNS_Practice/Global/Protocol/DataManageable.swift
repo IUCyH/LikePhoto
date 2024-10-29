@@ -9,6 +9,6 @@ import Foundation
 
 protocol DataManageable {
     init()
-    func fetch(with: RequestType, _ parameter: GetParameter) async throws -> GetResult
+    @MainActor func fetch(with: RequestType, _ parameter: GetParameter) async throws -> GetResult
     func update(with: RequestType)
 }

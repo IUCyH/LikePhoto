@@ -10,10 +10,9 @@
 		4DB23D11017C2D192F6A0312 /* Pods_SNS_Practice_SNS_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AB3C477F1BA29BA3E00CF1 /* Pods_SNS_Practice_SNS_PracticeUITests.framework */; };
 		5E7FB98FEB4DD138BDBD6920 /* Pods_SNS_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128F6D89898AFE3BB5EAA524 /* Pods_SNS_PracticeTests.framework */; };
 		67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA25DCC1C2B82C7D07A1275 /* Pods_SNS_Practice.framework */; };
+		FE1B39132CCFE7CE008A24DC /* LikeServer in Frameworks */ = {isa = PBXBuildFile; productRef = FE1B39122CCFE7CE008A24DC /* LikeServer */; };
 		FE50CC8B2C8A9F98009B6386 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50CC8A2C8A9F98009B6386 /* IdentifiableCell.swift */; };
-		FE5289022CB060870098E0A5 /* libLikeServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3043172CB04A75004033BB /* libLikeServer.a */; };
 		FE67D1072CB062BB0028DE99 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE67D1062CB062BB0028DE99 /* DataManager.swift */; };
-		FE67D1102CB067F10028DE99 /* libLikeServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE67D10F2CB067F10028DE99 /* libLikeServer.a */; };
 		FE93A88B2C95F7C900810F61 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88A2C95F7C900810F61 /* LikeButton.swift */; };
 		FE93A88D2C95FD8300810F61 /* CommentsDisplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88C2C95FD8300810F61 /* CommentsDisplayButton.swift */; };
 		FE93A8902C96029900810F61 /* UserInfoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE93A88F2C96029900810F61 /* UserInfoDisplayView.swift */; };
@@ -114,9 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE1B39132CCFE7CE008A24DC /* LikeServer in Frameworks */,
 				67A27AFA15FE080CE377FE94 /* Pods_SNS_Practice.framework in Frameworks */,
-				FE5289022CB060870098E0A5 /* libLikeServer.a in Frameworks */,
-				FE67D1102CB067F10028DE99 /* libLikeServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +506,9 @@
 				Base,
 			);
 			mainGroup = FEDCBDB62C884F27007EB69A;
+			packageReferences = (
+				FE1B39112CCFE7CE008A24DC /* XCRemoteSwiftPackageReference "LikeServerAPI" */,
+			);
 			productRefGroup = FEDCBDC02C884F27007EB69A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -863,8 +864,6 @@
 					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/swift",
-					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator",
-					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iucyh.SNS-Practice";
@@ -877,8 +876,8 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "";
-				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -911,8 +910,6 @@
 					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/swift",
-					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator",
-					"/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iucyh.SNS-Practice";
@@ -924,9 +921,9 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos/LikeServer.swiftmodule";
-				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphoneos";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "/Users/iucyh/Library/Developer/Xcode/DerivedData/LikeServer-enhwrfynvhegizbteeluoqxqwjug/Build/Products/Debug-iphonesimulator";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1044,6 +1041,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE1B39112CCFE7CE008A24DC /* XCRemoteSwiftPackageReference "LikeServerAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IUCyH/LikeServerAPI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE1B39122CCFE7CE008A24DC /* LikeServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE1B39112CCFE7CE008A24DC /* XCRemoteSwiftPackageReference "LikeServerAPI" */;
+			productName = LikeServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEDCBDB72C884F27007EB69A /* Project object */;
 }
